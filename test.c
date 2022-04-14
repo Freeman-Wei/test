@@ -26,6 +26,7 @@ int main()
                     carry_bit_tem = carry_bit << j;
                     arr[i] = arr[i] ^ carry_bit_tem;
                     //printf("%d: %x, %x\n", j, arr[i], carry_bit_tem);
+                    //printf("%d: %x, %x\n", j, arr[i], carry_bit_tem);
                 }else if (((carry_bit << j) & arr[i])){
                     n++;
                 }

@@ -53,6 +53,7 @@ int main()
         printf("%d: %x\n", i, arr[i]);
     }
 
+    printf("%d, %d\n",num, true_bit);
 
     return 0;
 }

@@ -61,6 +61,7 @@ int main()
     }
 
     printf("%d, %d\n",num, true_bit);
+    printf("tt\n");
 
     return 0;
 }

@@ -1,4 +1,11 @@
+/*
+    2022.04.15
+    laiwei.lv
+    功能：
+*/
 #include <stdio.h>
+
+#define LEN 1000
 
 int main()
 {
@@ -17,7 +24,7 @@ int main()
         n = 2;
         num = 0;
         for( i = 0; i < 32; i++){
-            for(j = 0; j < 32 && num < 1000; j++){
+            for(j = 0; j < 32 && num < LEN; j++){
 
                 num ++;
 

@@ -54,27 +54,6 @@ int main()
     }
 
     printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
-    printf("%d, %d\n",num, true_bit);
 
     return 0;
 }

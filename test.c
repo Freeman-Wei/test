@@ -7,42 +7,54 @@ int main()
     int n = 3, num = 0;
     int i = 0, j = 0;
     int carry_bit_tem = 0;
-    int a = 0, b = 4;
+    int true_bit = 0;
 
     for (i = 0; i < 32; i++){
         arr[i] = 0xffffffff;
     }
     
-    while(--b){
-        n = 3;
+    while(1){
+        n = 2;
         num = 0;
         for( i = 0; i < 32; i++){
             for(j = 0; j < 32 && num < 1000; j++){
+
                 num ++;
 
-                if (n == 3){
-                    a ++;
-                    n = 1;
-                    carry_bit_tem = carry_bit << j;
-                    arr[i] = arr[i] ^ carry_bit_tem;
-                    printf("%d: %x, %x\n", j, arr[i], carry_bit_tem);
-                }else if (((carry_bit << j) & arr[i])){
+                if (((carry_bit << j) & arr[i])){
+
                     n++;
+                    
+                    if (n == 3){
+                        true_bit ++;
+                        n = 0;
+                        carry_bit_tem = carry_bit << j;
+                        arr[i] = arr[i] ^ carry_bit_tem;
+                        //printf("%d: %x, %x\n", j, arr[i], carry_bit_tem);
+                    }
                 }
                 
-                if(a == 999){
+                if(true_bit == 999){
                     break;
                 }
             }
             
-            if(a == 999){
+            if(true_bit == 999){
                     break;
                 }
-            printf("%d: %x\n", i, arr[i]);
         }
+
+        if(true_bit == 999){
+                    break;
+                }
     }
 
-    printf("%d, %d\n",num, a);
+    for (i = 0; i < 32; i++){
+        printf("%d: %x\n", i, arr[i]);
+    }
+
+    printf("%d, %d\n",num, true_bit);
+    printf("%d, %d\n",num, true_bit);
 
     return 0;
 }

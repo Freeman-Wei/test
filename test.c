@@ -5,11 +5,16 @@
 */
 #include <stdio.h>
 
+#define L 32
 #define LEN 1000
+#define N 999
+#define BREAK if(true_bit == N){\
+                    break;\
+                }
 
 int main()
 {
-    int arr[32] ;
+    int arr[L] ;
     int carry_bit = 1, flag = 0;
     int n = 3, num = 0;
     int i = 0, j = 0;
@@ -20,11 +25,11 @@ int main()
         arr[i] = 0xffffffff;
     }
     
-    while(1){
+    while(true_bit != N){
         n = 2;
         num = 0;
-        for( i = 0; i < 32; i++){
-            for(j = 0; j < 32 && num < LEN; j++){
+        for( i = 0; i < L && num < LEN; i++){
+            for(j = 0; j < L && num < LEN; j++){
 
                 num ++;
 
@@ -37,31 +42,34 @@ int main()
                         n = 0;
                         carry_bit_tem = carry_bit << j;
                         arr[i] = arr[i] ^ carry_bit_tem;
-                        //printf("%d: %x, %x\n", j, arr[i], carry_bit_tem);
                     }
                 }
-                
-                if(true_bit == 999){
+                BREAK
+            }
+            BREAK
+        }
+    }
+
+    for (i = 0; i < L; i++){
+
+        if(arr[i] && i != (L - 1)){
+            printf("%d: %x\n", i, arr[i]);
+
+            for(j = 0; j < L; j++){
+
+                carry_bit_tem = carry_bit << j;
+
+                if(arr[i] & carry_bit_tem){
+
+                    num = 32 * i;
+                    num = num + j + 1;
+                    printf("%d\n", num);
                     break;
                 }
             }
-            
-            if(true_bit == 999){
-                    break;
-                }
+            break;
         }
-
-        if(true_bit == 999){
-                    break;
-                }
     }
-
-    for (i = 0; i < 32; i++){
-        printf("%d: %x\n", i, arr[i]);
-    }
-
-    printf("%d, %d\n",num, true_bit);
-    printf("test\n");
 
     return 0;
 }

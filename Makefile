@@ -25,7 +25,7 @@
 
 # -y：表示编译进 内核
 # -m：表示编译成 .ko 文件
-obj-m := test_led.o
+obj-m := demo_jpeg.o
 # obj-m := led_dev.o
 # obj-m += led_dri.o
 

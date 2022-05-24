@@ -10,7 +10,6 @@
 #include <linux/cdev.h>  
 #include <linux/device.h> 
 #include <linux/gpio.h>
-#include </home/fanvil/share/ssd21x/kernel/drivers/sstar/include/pioneer3/gpio.h>
 
 
 MODULE_LICENSE("GPL");   
